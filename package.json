@@ -9,6 +9,9 @@
     "start": "node server.js",
     "dev": "nodemon server.js"
   },
+  "repository": {
+    "type": "git"
+  }
   "author": "Ayaan Kazerouni",
   "license": "ISC",
   "dependencies": {
