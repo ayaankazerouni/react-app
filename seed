@@ -1,0 +1,58 @@
+#! /usr/bin/env node
+
+var mongoose = require('mongoose');
+var Vote = require('./models/vote');
+
+function seed() {
+  mongoose.connect('mongodb://localhost:27017/bahama-llama');
+
+  var llamas = [
+    'sherriff_llama',
+    'deep_llama',
+    'weird_llama',
+    'cool_dude_llama',
+    'awkward_llama'
+  ];
+
+  for (var i = 0; i < llamas.length; i++) {
+    seedVote(llamas[i], llamas[i] + '@llama.com');
+  }
+
+  Vote.remove({}, (err) => {
+    if (err) console.error(err);
+
+    var emails = [
+      'warrenzevon@llama.com',
+      'keithrichards@llama.com',
+      'micktaylor@llama.com',
+      'garyclarkjr@llama.com',
+      'literallyallfourbeatles@llama.com',
+      'theworstkindofperson@llama.com',
+      'llamaking@llama.com',
+      'darthvader@llama.com'
+    ];
+
+    while(emails.length > 0) {
+      seedVote(randomLlama(llamas), emails.pop());
+    }
+  });
+};
+
+function randomLlama(llamas) {
+
+  var index = Math.floor((Math.random() * llamas.length));
+  return llamas[index];
+}
+
+function seedVote(llama, email) {
+  var vote = new Vote({
+    email: email,
+    vote: llama
+  });
+  vote.save((err, vote) => {
+    if (err) console.error(err);
+    console.log(vote);
+  });
+}
+
+seed();
