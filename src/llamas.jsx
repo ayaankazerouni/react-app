@@ -3,7 +3,9 @@ var React = require('react');
 var Llamas = React.createClass({
   render: function() {
     return (
-      <h2>Llamas</h2>
+      <div className='llamas'>
+        <h2>Llamas</h2>
+      </div>
     );
   }
 });
