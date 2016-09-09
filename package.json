@@ -1,0 +1,24 @@
+{
+  "name": "bahama-llama",
+  "version": "1.0.0",
+  "description": "The road to an internship is paved with good intentions.",
+  "main": "lib/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --progress",
+    "start": "node server.js"
+  },
+  "author": "Ayaan Kazerouni",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "express": "^4.14.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-react": "^6.11.1",
+    "nodemon": "^1.10.2",
+    "webpack": "^1.13.2"
+  }
+}
