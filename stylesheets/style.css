@@ -26,6 +26,10 @@
 .col-11 {width: 91.66%;}
 .col-12 {width: 100%;}
 
+.sidebar {
+  height: 100%;
+}
+
 body {
   font-family: Helvetica;
 }
@@ -61,10 +65,6 @@ u.header li a:hover {
   background-color: #555;
 }
 
-ul.header li.icon {
-  display: none;
-}
-
 #standings {
   border: 1px solid #333;
   border-radius: 10px;
@@ -84,4 +84,26 @@ ul.header li.icon {
     [class*="col-"] {
         width: 100%;
     }
+}
+
+.form-group {
+  display: table-cell;
+  vertical-align: middle;
+  height: 50px;
+  content: "";
+  clear: both;
+  display: block;
+}
+
+input {
+  border-radius: 10px;
+}
+
+input[type=text] {
+  width: 100%;
+  padding: 10px 10px;
+}
+
+input[type=radio] {
+  margin-right: 1%;
 }
