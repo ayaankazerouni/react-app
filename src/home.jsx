@@ -1,7 +1,37 @@
 var React = require('react');
 
 var Home = React.createClass({
-  render: function() {
+  getInitialState: function () {
+    return { data: [] };
+  },
+  loadInitialVotes: function () {
+    var url = '/votes';
+    $.ajax({
+      url: url,
+      type: 'get',
+      dataType: 'json',
+      cache: false,
+      success: function (data) {
+        this.setState({data: data});
+      }.bind(this),
+      error: function (xhr, status, err) {
+        console.error(url, status, err.toString());
+      }.bind(this)
+    });
+  },
+  componentDidMount: function() {
+    this.loadInitialVotes()
+  },
+  render: function () {
+    var voteRows = this.state.data.map(function(vote) {
+      return (
+        <tr key={vote._id}>
+          <td>{vote._id}</td>
+          <td className='number-field'>{vote.count}</td>
+        </tr>
+      );
+    });
+
     return (
       <div className='home'>
         <div className='row'>
@@ -20,26 +50,7 @@ var Home = React.createClass({
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Sherriff Llama</td>
-                  <td className='number-field'>6</td>
-                </tr>
-                <tr>
-                  <td>Deep Llama</td>
-                  <td className='number-field'>5</td>
-                </tr>
-                <tr>
-                  <td>Weird Llama</td>
-                  <td className='number-field'>2</td>
-                </tr>
-                <tr>
-                  <td>Cool Dude Llama</td>
-                  <td className='number-field'>0</td>
-                </tr>
-                <tr>
-                  <td>Last Llama</td>
-                  <td className='number-field'>1</td>
-                </tr>
+                {voteRows}
               </tbody>
             </table>
           </div>
