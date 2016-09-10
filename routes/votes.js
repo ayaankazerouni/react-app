@@ -11,6 +11,7 @@ router.get('/votes', (req, res) => {
       },
       (err, votes) => {
         if (err) console.error(err);
+
         res.setHeader('Content-Type', 'application/json');
         res.json(votes);
       }
@@ -27,7 +28,14 @@ router.post('/votes', (req, res) => {
   vote.save((err, vote) => {
     if (err) console.error(err);
 
-    console.log(vote);
+    console.log(vote.email + ' cast a vote for ' + vote.vote + '.');
+  });
+});
+
+router.get('/llamas', (req, res) => {
+  Vote.distinct('vote', (err, llamas) => {
+    if (err) console.error(err);
+    res.send(llamas);
   });
 });
 

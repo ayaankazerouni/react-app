@@ -1,16 +1,17 @@
 var React = require('react');
+var helpers = require('./helpers');
 
 var Llamas = React.createClass({
-  getInitialState: function() {
+  getInitialState() {
     return { email: '' };
   },
-  handleVoteChange: function(e) {
+  handleVoteChange(e) {
     this.setState({ vote: e.target.value });
   },
-  handleEmailChange: function(e) {
+  handleEmailChange(e) {
     this.setState({email: e.target.value});
   },
-  handleSubmit: function(e) {
+  handleSubmit(e) {
     e.preventDefault()
     var vote = {
       email: this.state.email,
@@ -31,7 +32,19 @@ var Llamas = React.createClass({
       }.bind(this)
     });
   },
-  render: function() {
+  render() {
+    var llamas = this.props.params.llamas.split(',');
+    var llamaRadios = llamas.map((result) => {
+      return (
+        <div key={result} className="form-group">
+          <input type="radio"
+            name="vote"
+            value={result}
+            checked={this.state.vote === result}
+            onChange={this.handleVoteChange}/>{helpers.slugToDisplay(result)}
+        </div>
+      )
+    });
     return (
       <div className="llamas col-12">
         <form onSubmit={this.handleSubmit}>
@@ -47,42 +60,7 @@ var Llamas = React.createClass({
                 onChange={this.handleEmailChange}/>
             </div>
           </div>
-          <div className="form-group">
-            <input type="radio"
-              name="vote"
-              value="sherriff_llama"
-              onChange={this.handleVoteChange}/>Sherriff Llama
-          </div>
-          <div className="form-group">
-            <input type="radio"
-              name="vote"
-              value="deep_llama"
-              onChange={this.handleVoteChange}/>Deep Llama
-          </div>
-          <div className="form-group">
-            <input type="radio"
-              name="vote"
-              value="weird_llama"
-              onChange={this.handleVoteChange}/>Weird Llama
-          </div>
-          <div className="form-group">
-            <input type="radio"
-              name="vote"
-              value="surfer_dude_llama"
-              onChange={this.handleVoteChange}/>Surfer Dude Llama
-          </div>
-          <div className="form-group">
-            <input type="radio"
-              name="vote"
-              value="awkward_llama"
-              onChange={this.handleVoteChange}/>Awkward Llama
-          </div>
-          <div className="form-group">
-            <input type="radio"
-              name="vote"
-              value="hippe_llama"
-              onChange={this.handleVoteChange}/>Hippie Llama
-          </div>
+          { llamaRadios }
           <div className="form-group">
             <button type="submit">Post</button>
           </div>
