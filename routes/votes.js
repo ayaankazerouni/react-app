@@ -18,4 +18,17 @@ router.get('/votes', (req, res) => {
   });
 });
 
+router.post('/votes', (req, res) => {
+  var vote = new Vote({
+    email: req.body.email,
+    vote: req.body.id
+  });
+
+  vote.save((err, vote) => {
+    if (err) console.error(err);
+
+    console.log(vote);
+  });
+});
+
 module.exports = router;
