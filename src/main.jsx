@@ -1,15 +1,16 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var ReactRouter = require('react-router');
+const React = require('react');
+const ReactDOM = require('react-dom');
+const ReactRouter = require('react-router');
 
-var Router = ReactRouter.Router;
-var Route = ReactRouter.Route;
-var IndexRoute = ReactRouter.IndexRoute;
+const Router = ReactRouter.Router;
+const Route = ReactRouter.Route;
+const IndexRoute = ReactRouter.IndexRoute;
 
-var Container = require('./container')
-var Home = require('./home');
-var Llamas = require('./llamas');
+const Container = require('./container')
+const Home = require('./home');
+const Llamas = require('./llamas');
 
+require('./third_party/image-picker.min.js')
 require('./app');
 
 ReactDOM.render(

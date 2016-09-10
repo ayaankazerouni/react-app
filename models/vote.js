@@ -8,7 +8,7 @@ var Vote = new Schema({
   },
   vote: {
     type: String,
-    enum: [ 'sherriff_llama', 'deep_llama', 'weird_llama', 'hippie_llama', 'awkward_llama', 'surfer_dude_llama' ],
+    enum: [ 'sherriff_llama', 'deep_llama', 'suspicious_llama', 'hippie_llama', 'awkward_llama', 'surfer_dude_llama' ],
     required: true
   }
 });

@@ -1,5 +1,5 @@
-var React = require('react');
-var helpers = require('./helpers');
+const React = require('react');
+const helpers = require('./helpers');
 
 var Llamas = React.createClass({
   getInitialState() {
@@ -7,6 +7,7 @@ var Llamas = React.createClass({
   },
   handleVoteChange(e) {
     this.setState({ vote: e.target.value });
+    console.log(this.state.vote);
   },
   handleEmailChange(e) {
     this.setState({email: e.target.value});
@@ -32,25 +33,32 @@ var Llamas = React.createClass({
       }.bind(this)
     });
   },
+  componentDidMount() {
+    helpers.initImagePicker();
+  },
   render() {
     var llamas = this.props.params.llamas.split(',');
-    var llamaRadios = llamas.map((result) => {
+    var llamaSelect = llamas.map((result) => {
       return (
-        <li key={result}>
-          <input type="radio"
-            name="vote"
-            value={result}
-            checked={this.state.vote === result}
-            onChange={this.handleVoteChange}/>{helpers.slugToDisplay(result)}
-        </li>
+        // <li key={result}>
+        //   <input type="radio"
+        //     name="vote"
+        //     value={result}
+        //     checked={this.state.vote === result}
+        //     onChange={this.handleVoteChange}/>{helpers.slugToDisplay(result)}
+        // </li>
+        <option key={result}
+          data-img-src='./images/icon.png'
+          value={result}>{helpers.slugToDisplay(result)}</option>
       )
     });
+
     return (
       <div className="llamas col-12">
         <h2 className="form-title">Vote for the next Bahama Llama</h2>
         <form onSubmit={this.handleSubmit}>
-          <ul>
-            <li>
+          <ul className="input-list">
+            <li className="form-input">
               <label htmlFor="name">Your Name:</label>
               <input type="text"
                 placeholder="Your Name"
@@ -60,7 +68,7 @@ var Llamas = React.createClass({
                 value={this.state.name}
                 tabIndex="1"/>
             </li>
-            <li>
+            <li className="form-input">
               <label htmlFor="email">Your Email:</label>
               <input type="email"
                 placeholder="Your Email"
@@ -71,6 +79,9 @@ var Llamas = React.createClass({
                 tabIndex="2"/>
             </li>
           </ul>
+          <select className="image-picker show-html" onChange={this.handleVoteChange}>
+            {llamaSelect}
+          </select>
           <input type="submit" value="Vote" id="submit"/>
         </form>
       </div>

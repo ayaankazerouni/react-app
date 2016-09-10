@@ -1,5 +1,5 @@
-var React = require('react');
-var Results = require('./results');
+const React = require('react');
+const Results = require('./results');
 
 var pollInterval = null;
 

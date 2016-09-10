@@ -5,12 +5,12 @@
     if('placeholder' in test) $.support.placeholder = true;
 
     if ($.support.placeholder) {
-      $('form li').each(function() {
+      $('form li.input').each(function() {
         $(this).addClass('js-hide-label');
       });
     }
 
-    $('form li').find('input').on('keyup blur focus', function(e) {
+    $('form li.input').find('input').on('keyup blur focus', function(e) {
       var self = $(this);
       var parent = self.parent();
 
@@ -27,5 +27,10 @@
         }
       }
     });
+
+    $('ul.thumbnails li').on('click', function() {
+      $('ul.thumbnails .thumbnail').removeClass('selected');
+      $(this).find('div').addClass('selected');
+    })
   });
 })(window.jQuery, window, window.document);

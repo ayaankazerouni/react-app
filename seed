@@ -9,10 +9,10 @@ function seed() {
   var llamas = [
     'sherriff_llama',
     'deep_llama',
-    'weird_llama',
-    'awkward_llama',
-    'surfer_dude_llama',
-    'hippie_llama'
+    'suspicious_llama',
+    // 'awkward_llama',
+    // 'surfer_dude_llama',
+    // 'hippie_llama'
   ];
 
   for (var i = 0; i < llamas.length; i++) {

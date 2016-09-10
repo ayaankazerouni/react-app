@@ -1,5 +1,5 @@
-var React = require('react');
-var helpers = require('./helpers');
+const React = require('react');
+const helpers = require('./helpers');
 
 var Results = React.createClass({
   render() {
