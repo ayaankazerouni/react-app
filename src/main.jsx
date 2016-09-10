@@ -10,6 +10,8 @@ var Container = require('./container')
 var Home = require('./home');
 var Llamas = require('./llamas');
 
+require('./app');
+
 ReactDOM.render(
   <Router>
     <Route path="/" component={Container}>

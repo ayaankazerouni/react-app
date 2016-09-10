@@ -18,7 +18,8 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "mongoose": "^4.6.0"
+    "mongoose": "^4.6.0",
+    "react-radioimg": "^1.0.0"
   },
   "devDependencies": {
     "babel-core": "^6.14.0",
