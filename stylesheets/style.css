@@ -27,7 +27,7 @@
 .col-12 {width: 100%;}
 
 .sidebar {
-  height: 100%;
+  max-height: 100%;
 }
 
 body {
@@ -66,8 +66,6 @@ u.header li a:hover {
 }
 
 #standings {
-  border: 1px solid #333;
-  border-radius: 10px;
   margin-left: auto;
   margin-right: auto;
 }
@@ -83,6 +81,10 @@ u.header li a:hover {
 @media only screen and (max-width: 768px) {
     [class*="col-"] {
         width: 100%;
+    }
+
+    .sidebar {
+      border-left: none;
     }
 }
 
@@ -106,4 +108,12 @@ input[type=text] {
 
 input[type=radio] {
   margin-right: 1%;
+}
+
+button {
+  font-size: 15px;
+  padding: 6px 7px;
+  color: white;
+  background-color: green;
+  border-radius: 7px;
 }

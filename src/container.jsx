@@ -32,14 +32,14 @@ var Container = React.createClass({
     return (
       <div className='col-12'>
         <h1>Bahama Llama 2017</h1>
+        <ul className='header'>
+          <li><IndexLink to='/' activeClassName='active'>Home</IndexLink></li>
+          <li><Link to='/llamas' activeClassName='active'>Llamas</Link></li>
+          <li><Link to='/about' className='right' activeClassName='active'>About Me</Link></li>
+        </ul>
         <div id='content'>
           <div className="row">
             <div className="col-9">
-              <ul className='header'>
-                <li><IndexLink to='/' activeClassName='active'>Home</IndexLink></li>
-                <li><Link to='/llamas' activeClassName='active'>Llamas</Link></li>
-                <li><Link to='/about' className='right' activeClassName='active'>About Me</Link></li>
-              </ul>
               {this.props.children}
             </div>
             <div className="col-3 sidebar">
