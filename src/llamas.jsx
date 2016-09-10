@@ -36,34 +36,42 @@ var Llamas = React.createClass({
     var llamas = this.props.params.llamas.split(',');
     var llamaRadios = llamas.map((result) => {
       return (
-        <div key={result} className="form-group">
+        <li key={result}>
           <input type="radio"
             name="vote"
             value={result}
             checked={this.state.vote === result}
             onChange={this.handleVoteChange}/>{helpers.slugToDisplay(result)}
-        </div>
+        </li>
       )
     });
     return (
       <div className="llamas col-12">
+        <h2 className="form-title">Vote for the next Bahama Llama</h2>
         <form onSubmit={this.handleSubmit}>
-          <div className="form-group">
-            <div className="col-1">
-              <label htmlFor="email">Email:</label>
-            </div>
-            <div className="col-4">
+          <ul>
+            <li>
+              <label htmlFor="name">Your Name:</label>
               <input type="text"
+                placeholder="Your Name"
+                id="name"
+                name="name"
+                onChange={this.handleNameChange}
+                value={this.state.name}
+                tabIndex="1"/>
+            </li>
+            <li>
+              <label htmlFor="email">Your Email:</label>
+              <input type="email"
+                placeholder="Your Email"
                 id="email"
+                name="email"
+                onChange={this.handleEmailChange}
                 value={this.state.email}
-                placeholder="Your email address"
-                onChange={this.handleEmailChange}/>
-            </div>
-          </div>
-          { llamaRadios }
-          <div className="form-group">
-            <button type="submit">Post</button>
-          </div>
+                tabIndex="2"/>
+            </li>
+          </ul>
+          <input type="submit" value="Vote" id="submit"/>
         </form>
       </div>
     );

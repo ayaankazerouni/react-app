@@ -1,4 +1,6 @@
-* {
+*, *:before, *:after {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -27,26 +29,127 @@
 .col-12 {width: 100%;}
 
 .sidebar {
-  font-size: small;
   border-left: solid;
 }
 
 body {
   margin-top: 50px;
-  font-family: Verdana;
   font-size: 15px;
+}
+
+body, input, textarea {
+  font: 1em/1.5 Arial, Helvetica, sans-serif;
 }
 
 .title {
   background: url('../images/icon.png') no-repeat left;
   width: 100%;
-  height: 30vh;
+  height: 40vh;
   text-align: right;
+}
+
+.form-title {
+  font-size: 1.5em;
+  padding: 0.5em 0;
+  text-align: center;
+  background: #eab126;
+  color: white;
+  border-radius: 5px 5px 0 0;
+}
+
+form ul {
+  list-style-type: none;
+  list-style-position: outside;
+  background: white;
+  margin-bottom: 1em;
+}
+
+form li {
+  width: 100%;
+  border: 1px solid #ccc;
+  border-bottom: none;
+  margin-bottom: 0px;
+  position: relative;
+}
+
+form li:first-child {
+  border-top: 0;
+}
+
+form li:last-child {
+  border-bottom: 1px solid #ccc;
+}
+
+label, input {
+  display: block;
+  border: 0;
+}
+
+input {
+  width: 100%;
+  height: 100%;
+  padding: 2.25em 1em 1em;
+  outline: 0;
+}
+
+input[type=submit] {
+  background: #1fb585;
+  margin-bottom: 1em;
+  color: white;
+  border-radius: 3px;
+  padding: 0.75em;
+  -webkit-appearance: none; /* remove default browser <button> styling */
+  -webkit-transition: .333s ease -webkit-transform;
+  transition: 0.333s ease transform;
+}
+
+input[type=submit]:hover {
+  -webkit-transform: scale(1.025);
+  transform: scale(1.025);
+  cursor: pointer;
+}
+
+input[type=submit]:active {
+  -webkit-transform: scale(0.975);
+  transform: scale(0.975);
+}
+
+label {
+  font-size: .8125em;
+  position: absolute;
+  top: 1.23em;
+  left: 1.23em;
+  color: #1fb585;
+  opacity: 1;
+  -webkit-transition: 0.333s ease top, 0.333s ease opacity;
+  transition: 0.333s ease top, 0.333s ease opacity;
+}
+
+.js-hide-label label {
+  opacity: 0;
+  top: 1.5em;
+}
+
+.js-unhighlight-label label {
+  color: #999;
+}
+
+.js-error {
+  border-color: #f24c42;
+}
+
+.js-error + li {
+  border-top-color: #f24c42;
+}
+
+.js-error label {
+  color: #f24c42;
 }
 
 h1 {
   font-size: 50px;
   padding-top: 10vh;
+  color: #eab126;
 }
 
 ul.header {
@@ -60,6 +163,7 @@ ul.header {
   margin: 0;
   padding: 0;
   overflow: hidden;
+  background-color: black;
 }
 
 ul.header li a {
@@ -71,17 +175,14 @@ ul.header li a {
   transition: 0.3s;
   font-size: 17px;
   float: left;
-}
-
-.clear {
-  clear: both;
+  color: white;
 }
 
 .right {
   float: right !important;
 }
 
-u.header li a:hover {
+ul.header li a:hover {
   background-color: #555;
 }
 
@@ -95,7 +196,16 @@ u.header li a:hover {
 }
 
 #standings td,th {
-  padding: 14px 16px;
+  padding: 7px 8px;
+  font-size: small;
+}
+
+#standings tr td:first-child,th:first-child {
+  width: 90%;
+}
+
+#standings tr th:first-child {
+  text-align: left;
 }
 
 @media only screen and (max-width: 768px) {
@@ -103,36 +213,11 @@ u.header li a:hover {
         width: 100%;
     }
 
+    .form-title {
+      font-size: large;
+    }
+
     .sidebar {
       border-left: none;
     }
-}
-
-.form-group {
-  display: table-cell;
-  vertical-align: middle;
-  height: 50px;
-  content: "";
-  clear: both;
-  display: block;
-}
-
-input {
-  border-radius: 10px;
-}
-
-input[type=text] {
-  width: 100%;
-  padding: 10px 10px;
-}
-
-input[type=radio] {
-  margin-right: 1%;
-}
-
-button {
-  font-size: 15px;
-  padding: 6px 7px;
-  border-radius: 7px;
-  cursor: pointer;;
 }
