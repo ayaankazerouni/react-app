@@ -1,9 +1,10 @@
 var React = require('react');
+var helpers = require('./helpers');
 
 var Results = React.createClass({
-  render: function() {
+  render() {
     var voteRows = this.props.data.map(function(vote) {
-      var display = slugToDisplay(vote._id);
+      var display = helpers.slugToDisplay(vote._id);
       return (
         <tr key={vote._id}>
           <td>{display}</td>
@@ -31,12 +32,5 @@ var Results = React.createClass({
     );
   }
 });
-
-function slugToDisplay(slug) {
-  slug = slug.replace(new RegExp('_', 'g'), ' ');
-  return slug.replace(/(^| )(\w)/g, function(x) {
-    return x.toUpperCase();
-  });
-}
 
 module.exports = Results;

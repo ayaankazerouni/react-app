@@ -4,7 +4,7 @@ var Results = require('./results');
 var pollInterval = null;
 
 var Home = React.createClass({
-  render: function () {
+  render() {
     return (
       <div className='home'>
         <div className='row'>

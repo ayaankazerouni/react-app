@@ -14,7 +14,7 @@ ReactDOM.render(
   <Router>
     <Route path="/" component={Container}>
       <IndexRoute component={Home} />
-      <Route path="llamas" component={Llamas}/>
+      <Route path="llamas/:llamas" component={Llamas}/>
     </Route>
   </Router>,
   document.getElementById('container')
