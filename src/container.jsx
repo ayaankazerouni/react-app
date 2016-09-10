@@ -46,20 +46,24 @@ var Container = React.createClass({
   },
   render() {
     return (
-      <div className='col-12'>
-        <h1>Bahama Llama 2017</h1>
-        <ul className='header'>
-          <li><IndexLink to='/' activeClassName='active'>Home</IndexLink></li>
-          <li><Link to={`/llamas/${this.state.llamas}`} activeClassName='active'>Llamas</Link></li>
-          <li><Link to='/about' className='right' activeClassName='active'>About Me</Link></li>
-        </ul>
-        <div id='content'>
-          <div className="row">
-            <div className="col-9">
-              {this.props.children}
-            </div>
-            <div className="col-3 sidebar">
-              <Results data={this.state.data}/>
+      <div className="container">
+        <div className="title">
+          <h1>Bahama Llama 2017</h1>
+        </div>
+        <div className='col-12'>
+          <ul className='header'>
+            <li><IndexLink to='/' activeClassName='active'>HOME</IndexLink></li>
+            <li><Link to={`/llamas/${this.state.llamas}`} activeClassName='active'>LLAMAS</Link></li>
+            <li><Link to='/about' className='right' activeClassName='active'>ABOUT ME</Link></li>
+          </ul>
+          <div id='content'>
+            <div className="row">
+              <div className="col-10">
+                {this.props.children}
+              </div>
+              <div className="col-2 sidebar">
+                <Results data={this.state.data}/>
+              </div>
             </div>
           </div>
         </div>
