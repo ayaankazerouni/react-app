@@ -1,5 +1,5 @@
-const React = require('react');
-const helpers = require('./helpers');
+const React = require("react");
+const helpers = require("./helpers");
 
 var Results = React.createClass({
   render() {
@@ -8,16 +8,16 @@ var Results = React.createClass({
       return (
         <tr key={vote._id}>
           <td>{display}</td>
-          <td className='number-field'>{vote.count}</td>
+          <td className="number-field">{vote.count}</td>
         </tr>
       );
     });
     return  (
-      <div className='results'>
-        <h2>
+      <div className="results">
+        <h3 className="title-3">
           Polls
-        </h2>
-        <table id='standings'>
+        </h3>
+        <table id="standings">
           <thead>
             <tr>
               <th>Llama in Question</th>

@@ -14,11 +14,22 @@ const Llamas = require('./llamas');
 //jQuery plugins
 require('./third_party/image-picker');
 
+var llamas = [
+  'sherriff_llama',
+  'suspicious_llama',
+  'canadian_llama',
+  'photogenic_llama',
+  'happy_llama',
+  'unhappy_llama',
+  'surfer_dude_llama',
+  'deep_llama'
+];
+
 ReactDOM.render(
   <Router>
     <Route path="/" component={Container}>
       <IndexRoute component={Home} />
-      <Route path="llamas/:llamas" component={Llamas}/>
+      <Route path="/llamas" llamas={llamas} component={Llamas}/>
     </Route>
   </Router>,
   document.getElementById('container')

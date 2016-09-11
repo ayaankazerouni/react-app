@@ -6,8 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "postinstall": "webpack --progress",
-    "start": "npm run build; node server.js",
-    "dev": "npm run build; nodemon server.js",
+    "start": "npm run postinstall; node server.js",
+    "dev": "npm run postinstall; nodemon server.js",
     "seed": "./seed"
   },
   "repository": {

@@ -46,8 +46,7 @@ var Llamas = React.createClass({
     });
   },
   render() {
-    var llamas = this.props.params.llamas.split(',');
-    var llamaSelect = llamas.map((result) => {
+    var llamaSelect = this.props.route.llamas.map((result) => {
       return (
         <option key={result}
           data-img-src={`./images/resized/${result}.jpg`}
@@ -57,7 +56,7 @@ var Llamas = React.createClass({
 
     return (
       <div className="llamas col-12">
-        <h2 className="form-title">Vote for the next Bahama Llama</h2>
+        <h2 className="title-2">Vote for the next Bahama Llama</h2>
         <form onSubmit={this.handleSubmit}>
           <ul className="input-list">
             <li className="form-input">
@@ -87,7 +86,7 @@ var Llamas = React.createClass({
             value={this.state.vote}>
             {llamaSelect}
           </select>
-          <input type="submit" value="Vote" id="submit"/>
+          <input type="submit" className="enlarge-on-hover" value="Vote" id="submit"/>
         </form>
       </div>
     );

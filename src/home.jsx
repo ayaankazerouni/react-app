@@ -1,7 +1,6 @@
 const React = require('react');
-const Results = require('./results');
-
-var pollInterval = null;
+const ReactRouter = require('react-router');
+const Link = ReactRouter.Link;
 
 var Home = React.createClass({
   render() {
@@ -9,10 +8,19 @@ var Home = React.createClass({
       <div className='home'>
         <div className='row'>
           <div className='col-12'>
-            <h2>Home</h2>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+            <h2 className="title-2">Welcome to Bahama LLama 2017!</h2>
+            <p className="content">
+              The Decision for the world's next Bahama Llama is upon us! Untold riches and glory for one lucky Llama!
+              And you get to make it happen. You know how you've always wanted to give glory and riches to a Llama,
+              right? Yeah, like that. We are here to help make that happen! Up top!
             </p>
+
+            <p>
+              As you know, there have been several acts of violence from people in support of their Llamas. If you are
+              one such person, have at it. All we ask is that you leave us out of it.
+            </p>
+
+            <Link to="/llamas" className="no-decoration"><h3 className="title-3 enlarge-on-hover">Vote &rarr;</h3></Link>
           </div>
         </div>
         <div className='clear'></div>
