@@ -11,7 +11,7 @@ const Container = require('./container')
 const Home = require('./home');
 const Llamas = require('./llamas');
 
-// jQuery plugins
+//jQuery plugins
 require('./third_party/image-picker');
 
 ReactDOM.render(

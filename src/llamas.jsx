@@ -3,7 +3,7 @@ const helpers = require('./helpers');
 
 var Llamas = React.createClass({
   getInitialState() {
-    return { email: '', vote: '', name: '' };
+    return { email: '', vote: 'sherriff_llama', name: '' };
   },
   handleVoteChange() {
     this.setState({ vote: $(this.voteSelect).val()})
@@ -22,7 +22,7 @@ var Llamas = React.createClass({
       id: this.state.vote
     };
 
-    this.setState({ email: '', name: '', vote: '' });
+    this.setState({ email: '', name: '', vote: 'sherriff_llama' });
 
     var url = '/votes';
     $.ajax({
@@ -39,7 +39,7 @@ var Llamas = React.createClass({
   },
   componentDidMount() {
     helpers.initImagePicker();
-    helpers.initFormEventListeners();
+    helpers.initFormEvents();
 
     $('.thumbnails').find('li').click(() => {
       this.handleVoteChange();
@@ -49,13 +49,6 @@ var Llamas = React.createClass({
     var llamas = this.props.params.llamas.split(',');
     var llamaSelect = llamas.map((result) => {
       return (
-        // <li key={result}>
-        //   <input type="radio"
-        //     name="vote"
-        //     value={result}
-        //     checked={this.state.vote === result}
-        //     onChange={this.handleVoteChange}/>{helpers.slugToDisplay(result)}
-        // </li>
         <option key={result}
           data-img-src={`./images/resized/${result}.jpg`}
           value={result}>{helpers.slugToDisplay(result)}</option>
@@ -85,7 +78,8 @@ var Llamas = React.createClass({
                 name="email"
                 onChange={this.handleEmailChange}
                 value={this.state.email}
-                tabIndex="2"/>
+                tabIndex="2"
+                required/>
             </li>
           </ul>
           <select ref={(ref) => this.voteSelect = ref}
