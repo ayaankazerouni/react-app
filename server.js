@@ -16,7 +16,7 @@ app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/', routes);
 
-mongoose.connect('mongodb://localhost:27017/bahama-llama');
+mongoose.connect('mongodb://bahama-llama:llamallama@ds029426.mlab.com:29426/heroku_vjlvzhh6');
 
 app.listen(app.get('port'), function() {
   console.log('Server started: http://localhost:' + app.get('port') + '/');
