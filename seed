@@ -18,6 +18,10 @@ function seed() {
     'canadian_llama'
   ];
 
+  for (llama of llamas) {
+    seedVote(llama, llama, llama + "@llama.com");
+  }
+
   Vote.remove({}, (err) => {
     if (err) console.error(err);
 
