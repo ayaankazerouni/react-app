@@ -3,38 +3,47 @@ const helpers = require('./helpers');
 
 var Llamas = React.createClass({
   getInitialState() {
-    return { email: '' };
+    return { email: '', vote: '', name: '' };
   },
-  handleVoteChange(e) {
-    this.setState({ vote: e.target.value });
-    console.log(this.state.vote);
+  handleVoteChange() {
+    this.setState({ vote: $(this.voteSelect).val()})
   },
   handleEmailChange(e) {
-    this.setState({email: e.target.value});
+    this.setState({ email: e.target.value });
+  },
+  handleNameChange(e) {
+    this.setState({ name: e.target.value });
   },
   handleSubmit(e) {
     e.preventDefault()
     var vote = {
       email: this.state.email,
+      name: this.state.name,
       id: this.state.vote
     };
 
-    this.setState({ email: '', vote: '' });
+    this.setState({ email: '', name: '', vote: '' });
 
+    var url = '/votes';
     $.ajax({
-      url: '/votes',
+      url: url,
       type: 'post',
       data: vote,
-      success: function() {
-
-      }.bind(this),
-      error: function() {
+      success: (data) => {
+        console.log(data);
+      },
+      error: (xhr, status, err) => {
         console.error('/votes', status, err.toString());
-      }.bind(this)
+      }
     });
   },
   componentDidMount() {
     helpers.initImagePicker();
+    helpers.initFormEventListeners();
+
+    $('.thumbnails').find('li').click(() => {
+      this.handleVoteChange();
+    });
   },
   render() {
     var llamas = this.props.params.llamas.split(',');
@@ -79,7 +88,9 @@ var Llamas = React.createClass({
                 tabIndex="2"/>
             </li>
           </ul>
-          <select className="image-picker show-html" onChange={this.handleVoteChange}>
+          <select ref={(ref) => this.voteSelect = ref}
+            className="image-picker show-html"
+            value={this.state.vote}>
             {llamaSelect}
           </select>
           <input type="submit" value="Vote" id="submit"/>

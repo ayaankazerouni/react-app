@@ -22,6 +22,7 @@ router.get('/votes', (req, res) => {
 router.post('/votes', (req, res) => {
   var vote = new Vote({
     email: req.body.email,
+    name: req.body.name,
     vote: req.body.id
   });
 
@@ -29,12 +30,14 @@ router.post('/votes', (req, res) => {
     if (err) console.error(err);
 
     console.log(vote.email + ' cast a vote for ' + vote.vote + '.');
+    res.sendStatus(200);
   });
 });
 
 router.get('/llamas', (req, res) => {
   Vote.distinct('vote', (err, llamas) => {
     if (err) console.error(err);
+
     res.send(llamas);
   });
 });

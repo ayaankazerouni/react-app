@@ -10,8 +10,7 @@ const Container = require('./container')
 const Home = require('./home');
 const Llamas = require('./llamas');
 
-require('./third_party/image-picker.min.js')
-require('./app');
+require('./third_party/image-picker')
 
 ReactDOM.render(
   <Router>
