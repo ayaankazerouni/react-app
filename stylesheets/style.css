@@ -90,6 +90,8 @@ input {
   height: 100%;
   padding: 2.25em 1em 1em;
   outline: 0;
+  border-bottom: 1px solid #1fb585;
+  transition: 0.333s ease-in-out border-bottom;
 }
 
 input[type=submit] {
@@ -123,6 +125,10 @@ label {
   opacity: 1;
   -webkit-transition: 0.333s ease top, 0.333s ease opacity;
   transition: 0.333s ease top, 0.333s ease opacity;
+}
+
+.js-hide-label input {
+  border-bottom: none;
 }
 
 .js-hide-label label {
@@ -189,6 +195,7 @@ ul.header li a:hover {
 #standings {
   margin-left: auto;
   margin-right: auto;
+  background: #eab126;
 }
 
 #standings td.number-field {
@@ -197,7 +204,8 @@ ul.header li a:hover {
 
 #standings td,th {
   padding: 7px 8px;
-  font-size: small;
+  font-size: large;
+  color: white;
 }
 
 #standings tr td:first-child,th:first-child {
@@ -206,6 +214,21 @@ ul.header li a:hover {
 
 #standings tr th:first-child {
   text-align: left;
+}
+
+.thumbnail {
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.7s ease background, 0.7s ease color;
+}
+
+.thumbnail img {
+  border-radius: 10px;
+}
+
+.thumbnail.selected {
+  color: white !important;
+  background: #1fb585 !important;
 }
 
 @media only screen and (max-width: 768px) {
