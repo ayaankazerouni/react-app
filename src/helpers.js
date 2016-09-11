@@ -5,6 +5,17 @@ var helpers = {
       return x.toUpperCase();
     });
   },
+  initSmoothScroll() {
+    $('#top').on('click', function(e) {
+      var hash = this.hash;
+
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 800, function(){
+
+      });
+    })
+  },
   initImagePicker() {
     $('select').imagepicker({
       show_label: true

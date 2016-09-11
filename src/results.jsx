@@ -14,7 +14,7 @@ var Results = React.createClass({
     });
     return  (
       <div className="results">
-        <h3 className="title-3">
+        <h3 className="title title-3">
           Polls
         </h3>
         <table id="standings">

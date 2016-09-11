@@ -56,7 +56,7 @@ var Llamas = React.createClass({
 
     return (
       <div className="llamas col-12">
-        <h2 className="title-2">Vote for the next Bahama Llama</h2>
+        <h2 className="title title-2">Vote for the next Bahama Llama</h2>
         <form onSubmit={this.handleSubmit}>
           <ul className="input-list">
             <li className="form-input">
