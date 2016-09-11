@@ -34,7 +34,7 @@ var Container = React.createClass({
         <div className='col-12'>
           <ul className='header'>
             <li><IndexLink to='/' activeClassName='active'>HOME</IndexLink></li>
-            <li><Link to='/llamas' activeClassName='active'>LLAMAS</Link></li>
+            <li><Link to='/llamas' activeClassName='active'>VOTE</Link></li>
             <li><Link to='/about' className='right' activeClassName='active'>ABOUT ME</Link></li>
           </ul>
           <div id='content'>

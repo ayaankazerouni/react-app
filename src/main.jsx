@@ -10,6 +10,7 @@ const IndexRoute = ReactRouter.IndexRoute;
 const Container = require('./container')
 const Home = require('./home');
 const Llamas = require('./llamas');
+const About = require('./about');
 
 //jQuery plugins
 require('./third_party/image-picker');
@@ -30,6 +31,7 @@ ReactDOM.render(
     <Route path="/" component={Container}>
       <IndexRoute component={Home} />
       <Route path="/llamas" llamas={llamas} component={Llamas}/>
+      <Route path="/about" component={About}/>
     </Route>
   </Router>,
   document.getElementById('container')

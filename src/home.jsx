@@ -9,13 +9,13 @@ var Home = React.createClass({
         <div className='row'>
           <div className='col-12'>
             <h2 className="title-2">Welcome to Bahama LLama 2017!</h2>
-            <p className="content">
+            <p className="text">
               The Decision for the world's next Bahama Llama is upon us! Untold riches and glory for one lucky Llama!
               And you get to make it happen. You know how you've always wanted to give glory and riches to a Llama,
               right? Yeah, like that. We are here to help make that happen! Up top!
             </p>
 
-            <p>
+            <p className="text">
               As you know, there have been several acts of violence from people in support of their Llamas. If you are
               one such person, have at it. All we ask is that you leave us out of it.
             </p>

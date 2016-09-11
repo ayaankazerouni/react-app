@@ -34,7 +34,7 @@ body {
 }
 
 body, input, textarea {
-  font: 1em/1.5 Arial, Helvetica, sans-serif;
+  font: 1em/1.5 'Quicksand', sans-serif;
 }
 
 .title {
@@ -209,6 +209,12 @@ ul.header li a:hover {
   background-color: #eab126;
 }
 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
 .active {
   background-color: #eab126;
 }
@@ -254,8 +260,29 @@ ul.header li a:hover {
   background: #eab126 !important;
 }
 
-.img, .description {
-  border: 1px black solid;
+p.text {
+  list-style-type: none;
+  padding: 15px;
+  margin: 10px;
+  border: 1px solid #eab126;
+  border-radius: 10px;
+}
+
+.about ul > li {
+  padding: 10px;
+}
+
+a {
+  color: #1fb585;
+  text-decoration: underline;
+}
+
+a:visited {
+  color: #1fb585;
+}
+
+.about ul > li a:hover {
+  color: #eab126;
 }
 
 @media only screen and (min-width: 768px) {
