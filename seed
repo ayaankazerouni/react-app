@@ -12,7 +12,7 @@ function seed() {
     'suspicious_llama',
     // 'awkward_llama',
     // 'surfer_dude_llama',
-    // 'hippie_llama'
+    'fabulous_llama'
   ];
 
   for (var i = 0; i < llamas.length; i++) {
@@ -22,19 +22,44 @@ function seed() {
   Vote.remove({}, (err) => {
     if (err) console.error(err);
 
-    var emails = [
-      'warrenzevon@llama.com',
-      'keithrichards@llama.com',
-      'micktaylor@llama.com',
-      'garyclarkjr@llama.com',
-      'literallyallfourbeatles@llama.com',
-      'theworstkindofperson@llama.com',
-      'llamaking@llama.com',
-      'darthvader@llama.com'
+    var voters = [
+      {
+        email: 'warrenzevon@llama.com',
+        name: 'Warren Zevon'
+      },
+      {
+        email: 'keithrichards@llama.com',
+        name: 'Keith Richards'
+      },
+      {
+        email: 'micktaylor@llama.com',
+        name: 'Mick Taylor'
+      },
+      {
+        email: 'garyclarkjr@llama.com',
+        name: 'Gary Clark, Jr.'
+      },
+      {
+        email: 'literallyallfourbeatles@llama.com',
+        name: 'Literally All Four Beatles'
+      },
+      {
+        email: 'theworstkindofperson@llama.com',
+        name: 'The Worst Kind of Person'
+      },
+      {
+        email: 'llamaking@llama.com',
+        name: 'LLama King, IV'
+      },
+      {
+        email: 'darthvader@llama.com',
+        name: 'Darth Vader'
+      }
     ];
 
-    while(emails.length > 0) {
-      seedVote(randomLlama(llamas), emails.pop());
+    while(voters.length > 0) {
+      var voter = voters.pop();
+      seedVote(randomLlama(llamas), voter.name, voter.email);
     }
   });
 };
@@ -45,8 +70,9 @@ function randomLlama(llamas) {
   return llamas[index];
 }
 
-function seedVote(llama, email) {
+function seedVote(llama, name, email) {
   var vote = new Vote({
+    name: name,
     email: email,
     vote: llama
   });
