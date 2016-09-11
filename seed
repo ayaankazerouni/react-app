@@ -18,10 +18,6 @@ function seed() {
     'canadian_llama'
   ];
 
-  for (var i = 0; i < llamas.length; i++) {
-    seedVote(llamas[i], llamas[i], llamas[i] + '@llama.com');
-  }
-
   Vote.remove({}, (err) => {
     if (err) console.error(err);
 
@@ -57,18 +53,28 @@ function seed() {
       {
         email: 'darthvader@llama.com',
         name: 'Darth Vader'
+      },
+      {
+        email: 'ravishankar@llama.com',
+        name: 'Ravi Shankar'
+      },
+      {
+        email: 'donovan@llama.com',
+        name: 'Donovan'
       }
     ];
 
-    async.series([
-      function(callback) {
+    async.whilst(
+      () => { voters.length > 0; },
+      (callback) => {
         var voter = voters.pop();
         seedVote(randomLlama(llamas), voter.name, voter.email);
         callback(null);
+      },
+      (err, n) => {
+        mongoose.connection.close();
       }
-    ], function(err, results) {
-      mongoose.disconnect();
-    })
+    )
 
     mongoose.connection.close();
   });
