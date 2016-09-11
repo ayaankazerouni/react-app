@@ -29,7 +29,7 @@
 .col-12 {width: 100%;}
 
 .sidebar {
-  border-left: solid;
+  border-left: 1px solid #eab126;
 }
 
 body {
@@ -90,7 +90,10 @@ input {
   height: 100%;
   padding: 2.25em 1em 1em;
   outline: 0;
-  border-bottom: 1px solid #1fb585;
+}
+
+.form-input input {
+  border-bottom: 1px #eab126 solid;
   transition: 0.333s ease-in-out border-bottom;
 }
 
@@ -121,13 +124,13 @@ label {
   position: absolute;
   top: 1.23em;
   left: 1.23em;
-  color: #1fb585;
+  color: #eab126;
   opacity: 1;
   -webkit-transition: 0.333s ease top, 0.333s ease opacity;
   transition: 0.333s ease top, 0.333s ease opacity;
 }
 
-.js-hide-label input {
+.js-hide-label input{
   border-bottom: none;
 }
 
@@ -152,7 +155,7 @@ label {
   color: #f24c42;
 }
 
-h1 {
+.title h1 {
   font-size: 50px;
   padding-top: 10vh;
   color: #eab126;
@@ -169,7 +172,7 @@ ul.header {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background-color: black;
+  background-color: #1fb585;
 }
 
 ul.header li a {
@@ -189,7 +192,7 @@ ul.header li a {
 }
 
 ul.header li a:hover {
-  background-color: #555;
+  background-color: #eab126;
 }
 
 #standings {
@@ -219,6 +222,7 @@ ul.header li a:hover {
 .thumbnail {
   border-radius: 10px;
   cursor: pointer;
+  text-align: center;
   transition: 0.7s ease background, 0.7s ease color;
 }
 
@@ -228,12 +232,41 @@ ul.header li a:hover {
 
 .thumbnail.selected {
   color: white !important;
-  background: #1fb585 !important;
+  background: #eab126 !important;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen
+  and (max-width: 1200px)
+  and (min-width: 700px) {
+  .thumbnails li {
+    width: 100%;
+    height: auto;
+  }
+
+  .thumbnail p {
+    float: left;
+    margin-top: 75px;
+    margin-left: 80px;
+    font-size: 25px;
+  }
+
+  #standings td,th {
+    font-size: medium;
+  }
+}
+
+@media only screen and (max-width: 700px) {
     [class*="col-"] {
         width: 100%;
+    }
+
+    .title h1 {
+      font-size: 30px;
+    }
+
+    .title background-img {
+      width: 30%;
+      height: auto;
     }
 
     .form-title {
@@ -242,5 +275,14 @@ ul.header li a:hover {
 
     .sidebar {
       border-left: none;
+    }
+
+    .thumbnails li {
+      width: 100%;
+      height: auto;
+    }
+
+    .thumbnail {
+      font-size: 20px;
     }
 }

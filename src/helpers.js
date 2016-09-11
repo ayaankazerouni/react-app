@@ -41,7 +41,7 @@ var helpers = {
       }
     });
 
-    $('ul.thumbnails li').on('click touchstart', function() {
+    $('ul.thumbnails li').on('click tap', function() {
       $('ul.thumbnails .thumbnail').removeClass('selected');
       $(this).find('div').addClass('selected');
     })
