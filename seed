@@ -64,19 +64,10 @@ function seed() {
       }
     ];
 
-    async.whilst(
-      () => { voters.length > 0; },
-      (callback) => {
-        var voter = voters.pop();
-        seedVote(randomLlama(llamas), voter.name, voter.email);
-        callback(null);
-      },
-      (err, n) => {
-        mongoose.connection.close();
-      }
-    )
-
-    mongoose.connection.close();
+    while (voters.length > 0) {
+      var voter = voters.pop();
+      seedVote(randomLlama(llamas), voter.name, voter.email);
+    }
   });
 };
 
