@@ -10,13 +10,15 @@ function seed() {
     'sherriff_llama',
     'deep_llama',
     'suspicious_llama',
-    // 'awkward_llama',
-    // 'surfer_dude_llama',
-    'fabulous_llama'
+    'photogenic_llama',
+    'surfer_dude_llama',
+    'unhappy_llama',
+    'happy_llama',
+    'canadian_llama'
   ];
 
   for (var i = 0; i < llamas.length; i++) {
-    seedVote(llamas[i], llamas[i] + '@llama.com');
+    seedVote(llamas[i], llamas[i], llamas[i] + '@llama.com');
   }
 
   Vote.remove({}, (err) => {

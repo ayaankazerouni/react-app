@@ -58,10 +58,10 @@ var Container = React.createClass({
           </ul>
           <div id='content'>
             <div className="row">
-              <div className="col-10">
+              <div className="col-9">
                 {this.props.children}
               </div>
-              <div className="col-2 sidebar">
+              <div className="col-3 sidebar">
                 <Results data={this.state.data}/>
               </div>
             </div>

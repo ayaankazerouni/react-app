@@ -7,8 +7,7 @@ var helpers = {
   },
   initImagePicker() {
     $('select').imagepicker({
-      show_label: true,
-      hide_select: false
+      show_label: true
     });
   },
   initFormEventListeners() {

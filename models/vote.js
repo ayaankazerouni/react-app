@@ -13,9 +13,11 @@ var Vote = new Schema({
       'sherriff_llama',
       'deep_llama',
       'suspicious_llama',
-      'fabulous_llama',
-      'awkward_llama',
-      'surfer_dude_llama'
+      'photogenic_llama',
+      'surfer_dude_llama',
+      'happy_llama',
+      'unhappy_llama',
+      'canadian_llama'
     ],
     required: true
   }

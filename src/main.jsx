@@ -6,11 +6,13 @@ const Router = ReactRouter.Router;
 const Route = ReactRouter.Route;
 const IndexRoute = ReactRouter.IndexRoute;
 
+// components
 const Container = require('./container')
 const Home = require('./home');
 const Llamas = require('./llamas');
 
-require('./third_party/image-picker')
+// jQuery plugins
+require('./third_party/image-picker');
 
 ReactDOM.render(
   <Router>

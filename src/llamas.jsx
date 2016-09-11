@@ -57,7 +57,7 @@ var Llamas = React.createClass({
         //     onChange={this.handleVoteChange}/>{helpers.slugToDisplay(result)}
         // </li>
         <option key={result}
-          data-img-src='./images/icon.png'
+          data-img-src={`./images/resized/${result}.jpg`}
           value={result}>{helpers.slugToDisplay(result)}</option>
       )
     });
