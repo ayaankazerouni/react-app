@@ -147,7 +147,7 @@ var Llamas = React.createClass({
             value={this.state.vote}>
             {llamaSelect}
           </select>
-          <input type="submit" className="enlarge-on-hover" value="Vote" id="submit"/>
+          <input type="submit" className="enlarge-on-hover" value="Cast Vote" id="submit"/>
         </form>
       </div>
     );
