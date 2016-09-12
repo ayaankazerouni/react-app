@@ -23,7 +23,7 @@ var helpers = {
   },
   initFormEvents() {
     $.support.placeholder = false;
-    test = document.createElement('input');
+    var test = document.createElement('input');
     if('placeholder' in test) $.support.placeholder = true;
 
     if ($.support.placeholder) {
