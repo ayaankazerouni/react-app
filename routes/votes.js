@@ -12,6 +12,10 @@ router.get('/votes', (req, res) => {
       (err, votes) => {
         if (err) console.error(err);
 
+        votes.sort(function(a, b) {
+          return parseFloat(b.count) - parseFloat(a.count);
+        });
+
         res.setHeader('Content-Type', 'application/json');
         res.json(votes);
       }

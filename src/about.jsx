@@ -11,7 +11,7 @@ var About = React.createClass({
           that data to empirically determine if students are practicing incremental, test-driven development.
           <br/><br/>
           With this information, we hope to have interventions that might change student programming habits for
-          the better. Read more at my <a href="ayaankazerouni.github.io">personal website</a>.
+          the better. Read more at my <a href="http://ayaankazerouni.github.io">personal website</a>.
         </p>
         <p className="text">
           As the presentation layer, the front-end team together with the UX team are responsible for a user's first
@@ -29,14 +29,15 @@ var About = React.createClass({
           <ul>
             <li>
               <a href="https://facebook.github.io/react/">React</a>: I've wanted to spend some time working in React for
-                quite a while, and this was the perfect opportunity. React lets me modularise my front-end, so that page
-                has one or more 'working parts' (components). React is also very smart about updating the DOM (if you follow the rules and don't mess around).
+                quite a while, and this was the perfect opportunity. React lets me modularise my front-end, so that
+                each page has one or more 'working parts' (components). React is also very smart about updating the DOM
+                (if you follow the rules and don't mess around).
             </li>
             <li>
               <a href="https://github.com/reactjs/react-router">React Router</a>: To help with routing and data flow in conjunction with React.
             </li>
             <li>
-              <a href="https://jquery.com/">jQuery</a>: Some my own, some libraries pulled in (visible in the src/third_party/ directory).
+              <a href="https://jquery.com/">jQuery</a>: Some of it is my own, some libraries pulled in (visible in the src/third_party/ directory).
             </li>
             <li>
               <a href="https://webpack.github.io/">Webpack</a>: To bundle client side modules and make them available

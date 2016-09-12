@@ -18,11 +18,11 @@ require('./third_party/image-picker');
 var llamas = [
   'sherriff_llama',
   'suspicious_llama',
+  'surfer_dude_llama',
   'canadian_llama',
   'photogenic_llama',
   'happy_llama',
   'unhappy_llama',
-  'surfer_dude_llama',
   'deep_llama'
 ];
 
