@@ -31,7 +31,7 @@ ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={Container}>
       <IndexRoute component={Home} />
-      <Route path="/llamas" llamas={llamas} component={Llamas}/>
+      <Route path="/llamas" llamas={llamas} loadVotes={Container.loadVotes} component={Llamas}/>
       <Route path="/about" component={About}/>
     </Route>
   </Router>,
