@@ -11,7 +11,7 @@ var About = React.createClass({
           that data to empirically determine if students are practicing incremental, test-driven development.
           <br/><br/>
           With this information, we hope to have interventions that might change student programming habits for
-          the better. Read more at my <a href="http://ayaankazerouni.github.io">personal website</a>.
+          the better. Read more at my <a href="http://ayaankazerouni.github.io" target="_blank">personal website</a>.
         </p>
         <p className="text">
           As the presentation layer, the front-end team together with the UX team are responsible for a user's first
@@ -28,30 +28,33 @@ var About = React.createClass({
 
           <ul>
             <li>
-              <a href="https://facebook.github.io/react/">React</a>: I've wanted to spend some time working in React for
+              <a href="https://facebook.github.io/react/" target="_blank">React</a>: I've wanted to spend some time working in React for
                 quite a while, and this was the perfect opportunity. React lets me modularise my front-end, so that
                 each page has one or more 'working parts' (components). React is also very smart about updating the DOM
                 (if you follow the rules and don't mess around).
             </li>
             <li>
-              <a href="https://github.com/reactjs/react-router">React Router</a>: To help with routing and data flow in conjunction with React.
+              <a href="https://github.com/reactjs/react-router" target="_blank">React Router</a>: To help with routing
+                and data flow in conjunction with React. ReactRouter is helpful for single page applications like
+                this, where the browser doesn't reload for each page.
             </li>
             <li>
-              <a href="https://jquery.com/">jQuery</a>: Some of it is my own, some libraries pulled in (visible in the src/third_party/ directory).
+              <a href="https://jquery.com/" target="_blank">jQuery</a>: I wrote most of the jQuery that I use, and I
+                pulled in a library (image-picker) for choosing Llamas on the 'Vote' page. The file is in the src/third_party/ directory.
             </li>
             <li>
-              <a href="https://webpack.github.io/">Webpack</a>: To bundle client side modules and make them available
+              <a href="https://webpack.github.io/" target="_blank">Webpack</a>: To bundle client side modules and make them available
                 through Node's require statement.
             </li>
             <li>
               HTML5, CSS3, and JavaScript. I dealt with most (if not all) responsiveness issues with CSS.
             </li>
             <li>
-              <a href="https://babeljs.io/">Babel</a>: For transpiling ES6 and JSX code into JavaScript readable by
+              <a href="https://babeljs.io/" target="_blank">Babel</a>: For transpiling ES6 and JSX code into JavaScript readable by
                 browsers.
             </li>
             <li>
-              Less relevant (back end technologies): <a href="https://nodejs.org/en/">Node</a>, <a href="https://expressjs.com/">Express</a>, <a href="http://mongoosejs.com/">Mongoose</a> with <a href="https://www.mongodb.com/">MongoDB</a>.
+              Less relevant (back end technologies): <a href="https://nodejs.org/en/" target="_blank">Node</a>, <a href="https://expressjs.com/" target="_blank">Express</a>, <a href="http://mongoosejs.com/" target="_blank">Mongoose</a> with <a href="https://www.mongodb.com/" target="_blank">MongoDB</a>.
             </li>
           </ul>
         </p>
