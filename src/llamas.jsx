@@ -55,6 +55,7 @@ var Llamas = React.createClass({
       type: 'post',
       data: vote,
       success: (data) => {
+
         $('ul.thumbnails .thumbnail').removeClass('selected');
         $('ul.thumbnails li:first').find('.thumbnail').addClass('selected');
         var interval = setInterval(function() {

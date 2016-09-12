@@ -28,7 +28,7 @@ var Container = React.createClass({
   componentDidMount() {
     helpers.initSmoothScroll();
     this.loadVotes();
-    var pollInterval = setInterval(this.loadVotes, 4500);
+    var pollInterval = setInterval(this.loadVotes, 4000);
   },
   render() {
     var topLinkStyle = {textAlign: 'right'};
