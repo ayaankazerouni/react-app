@@ -22,6 +22,19 @@ var About = React.createClass({
           might be accessed from. Mobile calculators are a great example of apps in portrait mode looking complete different
           in landscape, going so far as to change the scope of functionality available.
         </p>
+        <h3 className="title title-3">The Application</h3>
+        <p className="text">
+          This is a voting application where we vote for the winner of 2017's Bahama Llama position. It does these
+          things:
+          <ul>
+            <li>
+              This is a single-page application, and the links make this more like a tabbed application (the browser never has to reload to do anything).
+            </li>
+            <li>
+              The table of poll results on the right (on desktop) and on the bottom (on mobile) updates in real-time as votes are cast.
+            </li>
+          </ul>
+        </p>
         <p className="text">
           This 'web application' was built as part of the application to the Front End Developer Intership at
           Zappos. The technologies used here are:

@@ -55,7 +55,16 @@ var Llamas = React.createClass({
       type: 'post',
       data: vote,
       success: (data) => {
-        location.href = '/';
+        $('ul.thumbnails .thumbnail').removeClass('selected');
+        $('ul.thumbnails li:first').find('.thumbnail').addClass('selected');
+        var interval = setInterval(function() {
+          $('#standings').fadeOut(200);
+          $('#standings').fadeIn(200);
+        }, 100);
+
+        setTimeout(function() {
+          clearInterval(interval);
+        }, 500);
       },
       error: (xhr, status, err) => {
         console.error('/votes', status, err.toString());
@@ -91,16 +100,18 @@ var Llamas = React.createClass({
         <div>
           {
             this.state.isShowingModal &&
-            <ModalContainer onClose={this.handleCloseModal}>
-              <ModalDialog onClose={this.handleCloseModal}>
-                <h2 className="title title2">
-                  {this.state.voteDisplay}
-                </h2>
-                <p>
-                  {this.state.llamaBio}
-                </p>
-              </ModalDialog>
-            </ModalContainer>
+            <div className="col-8">
+              <ModalContainer onClose={this.handleCloseModal}>
+                <ModalDialog onClose={this.handleCloseModal}>
+                  <h2 className="title title2">
+                    {this.state.voteDisplay}
+                  </h2>
+                  <p>
+                    {this.state.llamaBio}
+                  </p>
+                </ModalDialog>
+              </ModalContainer>
+            </div>
           }
         </div>
         <h2 className="title title-2">Vote for the next Bahama Llama</h2>
@@ -128,6 +139,9 @@ var Llamas = React.createClass({
                 required/>
             </li>
           </ul>
+          <p className="text">
+            Double tap on a contestant to view his or her bio.
+          </p>
           <select ref={(ref) => this.voteSelect = ref}
             className="image-picker show-html"
             value={this.state.vote}>
