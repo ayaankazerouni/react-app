@@ -22,10 +22,7 @@ module.exports = {
     ]
   },
   externals: {
-    // Don't bundle the 'react' npm package with the component.
-    'react': 'React',
-    'react-dom': 'ReactDOM',
-    'react-router': 'ReactRouter'
+
   },
   resolve: {
     // Include empty string '' to resolve files by their explicit extension

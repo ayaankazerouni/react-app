@@ -5,6 +5,7 @@ const ReactRouter = require('react-router');
 const Router = ReactRouter.Router;
 const Route = ReactRouter.Route;
 const IndexRoute = ReactRouter.IndexRoute;
+var hashHistory = ReactRouter.history;
 
 // components
 const Container = require('./container')
@@ -27,7 +28,7 @@ var llamas = [
 ];
 
 ReactDOM.render(
-  <Router>
+  <Router history={hashHistory}>
     <Route path="/" component={Container}>
       <IndexRoute component={Home} />
       <Route path="/llamas" llamas={llamas} component={Llamas}/>
