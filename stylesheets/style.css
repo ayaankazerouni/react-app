@@ -142,6 +142,10 @@ input[type=submit]:active {
   transform: scale(0.975);
 }
 
+input[type=submit].enlarge-on-hover {
+  background-color: #eab126;
+}
+
 label {
   font-size: .8125em;
   position: absolute;
