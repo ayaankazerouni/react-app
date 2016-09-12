@@ -28,8 +28,8 @@ var About = React.createClass({
           never has to reload to do anything). The table of poll results on the side (on desktop) and at the bottom (on
           mobile) updates in real-time as votes are gathered.
         </p>
+        <h3 className="title title-3">Technologies Used</h3>
         <p className="text">
-          <h3 className="title title-3">Technologies Used</h3>
           This 'web application' was built as part of the application to the Front End Developer Intership at
           Zappos. The technologies used here are:
           <ul>
