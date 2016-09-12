@@ -19,11 +19,11 @@ var llamas = [
   'sherriff_llama',
   'suspicious_llama',
   'surfer_dude_llama',
-  'canadian_llama',
   'photogenic_llama',
   'happy_llama',
   'unhappy_llama',
-  'deep_llama'
+  'deep_llama',
+  'canadian_llama'
 ];
 
 ReactDOM.render(

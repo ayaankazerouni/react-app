@@ -279,10 +279,15 @@ ul {
   text-align: left;
 }
 
+.thumbnails {
+  width: 95%;
+}
+
 .thumbnail {
   border-radius: 10px;
   cursor: pointer;
   text-align: center;
+  height: 260px;
   transition: 0.7s ease background, 0.7s ease color;
   -webkit-transition: 0.7s ease background, 0.7s ease color;
 }
