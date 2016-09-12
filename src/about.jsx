@@ -30,7 +30,7 @@ var About = React.createClass({
         </p>
         <h3 className="title title-3">Technologies Used</h3>
         <p className="text">
-          This 'web application' was built as part of the application to the Front End Developer Intership at
+          This 'web application' was built as part of the application to the Front End Developer Internship position at
           Zappos. The technologies used here are:
           <ul>
             <li>
@@ -39,7 +39,7 @@ var About = React.createClass({
                 front-end, so that each page has one or more 'working parts' (components). React is also very smart about updating the DOM (if you follow the rules and don't mess around). A few React libraries really
                 helped me out: <a href="https://github.com/reactjs/react-router" target="_blank">React Router</a> was
                 helpful in routing so that the browser never has to do a full reload, and <a
-                href="https://www.npmjs.com/package/react-modal-dialog">React Modal Dialog</a> helped out with
+                href="https://www.npmjs.com/package/react-modal-dialog" target="_blank">React Modal Dialog</a> helped out with
                 displaying Llama Bios. After all, I can't have you voting for a Llama without knowing what they stand
                 for.
             </li>
