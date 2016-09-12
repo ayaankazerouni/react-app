@@ -292,6 +292,10 @@ ul {
   -webkit-transition: 0.7s ease background, 0.7s ease color;
 }
 
+.thumbnail p {
+  margin-bottom: 20px;
+}
+
 .thumbnail img {
   border-radius: 10px;
 }

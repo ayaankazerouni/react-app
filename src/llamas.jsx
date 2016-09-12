@@ -1,12 +1,31 @@
 const React = require('react');
+const Modal = require('react-modal-dialog');
+const ModalContainer = Modal.ModalContainer;
+const ModalDialog = Modal.ModalDialog;
 const helpers = require('./helpers');
 
 var Llamas = React.createClass({
   getInitialState() {
-    return { email: '', vote: 'sherriff_llama', name: '' };
+    var sherriffBio = helpers.getLlamaBio('sherriff_llama');
+    return {
+      email: '',
+      vote: 'sherriff_llama',
+      name: '',
+      isShowingModal: false,
+      voteDisplay: 'sherriff_llama',
+      llamaBio: sherriffBio
+    };
+  },
+  handleOpenModal() {
+    this.setState({ isShowingModal: true });
+  },
+  handleCloseModal() {
+    this.setState({ isShowingModal: false });
   },
   handleVoteChange() {
     this.setState({ vote: $(this.voteSelect).val()})
+    this.setState({ voteDisplay: $(this.voteSelect).find('option:selected').text()});
+    this.setState({ llamaBio: helpers.getLlamaBio($(this.voteSelect).val())});
   },
   handleEmailChange(e) {
     this.setState({ email: e.target.value });
@@ -22,7 +41,13 @@ var Llamas = React.createClass({
       id: this.state.vote
     };
 
-    this.setState({ email: '', name: '', vote: 'sherriff_llama' });
+    this.setState({
+      email: '',
+      name: '',
+      vote: 'sherriff_llama',
+      voteDisplay: 'Sherriff Llama',
+      llamaBio: helpers.getLlamaBio('sherriff_llama')
+     });
 
     var url = '/votes';
     $.ajax({
@@ -30,7 +55,7 @@ var Llamas = React.createClass({
       type: 'post',
       data: vote,
       success: (data) => {
-        console.log(data);
+        location.href = '/';
       },
       error: (xhr, status, err) => {
         console.error('/votes', status, err.toString());
@@ -40,9 +65,16 @@ var Llamas = React.createClass({
   componentDidMount() {
     helpers.initImagePicker();
     helpers.initFormEvents();
+    var self = this;
 
-    $('.thumbnails').find('li').click(() => {
-      this.handleVoteChange();
+    $('.thumbnails li').on('click tap', function() {
+      $('ul.thumbnails .thumbnail').removeClass('selected');
+      $(this).find('div').addClass('selected');
+      self.handleVoteChange();
+    });
+
+    $('.thumbnails li').on('dblclick taphold', function() {
+      self.handleOpenModal();
     });
   },
   render() {
@@ -56,6 +88,21 @@ var Llamas = React.createClass({
 
     return (
       <div className="llamas col-12">
+        <div>
+          {
+            this.state.isShowingModal &&
+            <ModalContainer onClose={this.handleCloseModal}>
+              <ModalDialog onClose={this.handleCloseModal}>
+                <h2 className="title title2">
+                  {this.state.voteDisplay}
+                </h2>
+                <p>
+                  {this.state.llamaBio}
+                </p>
+              </ModalDialog>
+            </ModalContainer>
+          }
+        </div>
         <h2 className="title title-2">Vote for the next Bahama Llama</h2>
         <form onSubmit={this.handleSubmit}>
           <ul className="input-list">
