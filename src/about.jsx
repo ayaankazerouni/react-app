@@ -30,7 +30,7 @@ var About = React.createClass({
         </p>
         <h3 className="title title-3">Technologies Used</h3>
         <p className="text">
-          This 'web application' was built as part of the application to the Front End Developer Intership at
+          This 'web application' was built as part of the application to the Front End Developer Internship position at
           Zappos. The technologies used here are:
           <ul>
             <li>
