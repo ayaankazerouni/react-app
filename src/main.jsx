@@ -5,7 +5,7 @@ const ReactRouter = require('react-router');
 const Router = ReactRouter.Router;
 const Route = ReactRouter.Route;
 const IndexRoute = ReactRouter.IndexRoute;
-var hashHistory = ReactRouter.history;
+const hashHistory = ReactRouter.browserHistory;
 
 // components
 const Container = require('./container')
