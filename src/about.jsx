@@ -11,7 +11,7 @@ var About = React.createClass({
           that data to empirically determine if students are practicing incremental, test-driven development.
           <br/><br/>
           With this information, we hope to have interventions that might change student programming habits for
-          the better. Read more at my <a href="http://ayaankazerouni.github.io/personal-site" target="_blank">personal website</a>.
+          the better. Read more at my <a href="https://people.cs.vt.edu/~ayaan/" target="_blank">personal website</a>.
         </p>
         <p className="text">
           As the presentation layer, the front-end team together with the UX team are responsible for a user's first
